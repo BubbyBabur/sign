@@ -287,7 +287,7 @@ function draw(finalrender) {
         let color = document.getElementById("colour-input").value;
         fill(color);
         noStroke();
-        ellipse(mouseX, mouseY, sw, sw);
+        if(!finalrender) ellipse(mouseX, mouseY, sw, sw);
 
         if (mouseIsPressed) {
             if (CURR) {
@@ -302,7 +302,7 @@ function draw(finalrender) {
     if(TOOL === "DELETE") {
         fill(255,0,0,100);
         noStroke();
-        ellipse(mouseX, mouseY, 5, 5);
+        if(!finalrender) ellipse(mouseX, mouseY, 5, 5);
 
         if(mouseIsPressed) {
             if (CURR) {
@@ -319,7 +319,7 @@ function draw(finalrender) {
     }
     else if(TOOL === "STAMP") {
         let size = 50;
-        new Stamp(mouseX, mouseY, size, 0, STAMP).render();
+        if(!finalrender) new Stamp(mouseX, mouseY, size, 0, STAMP).render();
     }
     
 

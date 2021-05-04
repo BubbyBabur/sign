@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:ital,wght@0,300;1,300&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: rgb(255, 255, 255); */
+}
+canvas {
+  display: block;
+}
+
+#header {
+  height: 25vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#header-header {
+  font-size: 3rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+#header-subheader {
+  font-family: 'Roboto', sans-serif;
+}
+
+#submit-taco {
+  margin: auto;
+}
+
+#submit-burrito {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#submit {
+  border: none;
+  padding: 15px 30px;
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  cursor:pointer;
+  background-color: lightgray;
+}
+
+#user-info {
+  font-family: 'Roboto', sans-serif;
+  max-width: 300px;
+  text-align: center;
+  margin: 15px;
+}
+
+#user-from, #user-to {
+  font-weight: bold;
+}
+
+#burrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+#main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#toolbar, #stamps {
+	margin-left: auto;
+	margin-right: auto;
+	display:grid;
+	grid-template-columns: 50px;
+	grid-auto-rows: 50px;
+  row-gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0px black;
+}
+
+#toolbar {
+  margin-right: 15px;
+  background-color: lightgrey;
+} 
+#stamps {
+  margin-left: 15px;
+  background-color: whitesmoke;
+}
+
+.toolbar-elem, .stamps-elem {
+  cursor: pointer;
+}
+
+.toolbar-elem *, .stamps-elem * {
+	width: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#colour-input {
+  width: 50px;
+  height:50px;
+  border:  none;
+  padding: 0px;
+}
+
+#stroke-weight-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* god dam i hate everything about absolute positioning */
+#stroke-weight-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: black;
+  margin: auto;
+  left: 50%;
+}
+#stroke-weight-slider-menu {
+  position: relative;
+  z-index: 5;
+  cursor: initial;
+  padding: 15px;
+  background-color: lightslategray;
+  width: 200px;
+}
+
+#stroke-weight-please-end-me {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* wtf */
+@-moz-document url-prefix() {
+  #stroke-weight-slider-menu {
+    height: 18px;
+  }
+}
+
+#stroke-width {
+  width: 200px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* width: 200px; */
+  background-color: transparent;
+}
+
+/* God browser compatibility is such a pain in the butt */
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  border-radius: 6px;
+  background: lightgrey;
+}
+
+input[type="range"]::-moz-range-track {
+  appearance: none;
+  height: 12px;
+  border-radius: 6px;
+  background: lightgrey;
+}
+
+input[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  border-radius: 6px;
+  background: lightgrey;
+}
+
+/* killmekillmekillmekillmekillme */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  background: darkslategrey;
+}
+
+input[type="range"]::-ms-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  background: darkslategrey;
+}
+
+input[type="range"]::-moz-range-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  background: darkslategrey;
+}
+
+#modal {
+  position:fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+#modal-modal {
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+  max-width: 20vw;
+
+  transform: translate(-50%,-50%);
+}
+
+#modal-header {
+  font-weight:bold;
+}
+
+#modal-yes, #modal-no {
+  /* background-color: #4CAF50; Green */
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  cursor:pointer;
+}
+
+#modal-yes {
+  color: rgb(136, 0, 0);
+  background-color: rgb(253, 199, 199);
+}
+
+#modal-no {
+  background-color: rgb(194, 194, 194);
+}

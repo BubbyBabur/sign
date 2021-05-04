@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <title>Sign Your Name</title>
+</head>
+
+<body>
+    
+    <div id="burrito">
+        <div id="header">
+            <div id="header-header">Sign Your Name Here</div>
+            <div id="header-subheader">Press Submit when you're done!</div>
+        </div>
+        <div id="main">
+            <!-- Toolbar -->
+            <div id="toolbar">
+                <div class="toolbar-elem" id="pen"><img src="Icons/Pen.png"></div>
+                <div class="toolbar-elem" id="colour"><input id="colour-input" type="color" value="#000000"></div>
+                <div class="toolbar-elem" id="stroke-weight-button">
+                    <!-- Icon -->
+                    <div id="stroke-weight-please-end-me">
+                        <div id="stroke-weight-icon"></div>
+                    </div>
+                    <div id="stroke-weight-slider-menu" hidden=true>
+                        <input type="range" min="1" max="20" value="3" class="slider" id="stroke-width">
+                    </div>
+                </div>
+
+                
+
+                <div class="toolbar-elem" id="delete"><img src="Icons/Delete.png"></div>
+                <div class="toolbar-elem" id="undo"><img src="Icons/Undo.png"></div>
+                
+                <div class="toolbar-elem" id="clear-board"><img src="Icons/Clear.png"></div>
+            </div>
+
+            <!-- Canvas -->
+            <div id="container"></div>
+            
+            <!-- Stamps -->
+            <div id="stamps">
+                <!-- Populated in sketch.js -->
+            </div>
+
+            
+        </div>
+        <div id="submit-taco">
+            <div id="submit-burrito"> 
+                <div id="user-info">You are submitting as <span id="user-from">Rog#2597</span> to <span id="user-to">Rog#2597</span>'s yearbook.</div>
+                <button id="submit">
+                    Submit!
+                </button>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div id="modal" hidden>
+        <div id="modal-modal">
+            <span id="modal-header">Hello!</span><br>
+            <span id="modal-message">Placeholder Text!</span><br><br>
+            <button id="modal-yes">Yes</button>
+            <button id="modal-no">No</button>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+</body>
+
+</html>

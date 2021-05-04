@@ -228,6 +228,13 @@ function setup() {
     cnv = createCanvas(400, 400);
     cnv.id("cnv");
     cnv.parent("container");
+    cnv.mouseClicked(() => {
+        if (TOOL === "STAMP") {
+            let size = 50;
+            let angle = map(random(), 0, 1, -0.3, 0.3);
+            strokes.push(new Stamp(mouseX, mouseY, size, angle, STAMP));
+        }
+    })
 
     cnv.mousePressed( () => {
         if (TOOL === "PEN") {
@@ -323,16 +330,6 @@ function draw(finalrender) {
 
     }
 }
-
-function mouseClicked() {
-    if(TOOL === "STAMP") {
-        let size = 50;
-        let angle = map(random(),0,1,-0.3,0.3);
-        strokes.push(new Stamp(mouseX, mouseY, size, angle, STAMP));
-    }
-}
-
-
 
 document.getElementById("undo").addEventListener("click", () => {
     if (CURR) {
